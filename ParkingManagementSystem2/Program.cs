@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static ParkingManagementSystem.Program;
 
 namespace ParkingManagementSystem
 {
@@ -64,7 +65,7 @@ namespace ParkingManagementSystem
         }
         public class ParkingLot
         {
-            List<Car> parkingLots = new List<Car>();
+             public List<Car> parkingLots = new List<Car>();
             public int Id = 1;
 
             const int TotalCapacity = 100;
@@ -96,7 +97,7 @@ namespace ParkingManagementSystem
             }
 
             public void VacateSlot(Car car)
-            {
+            {   
                 if (IsEmpty())
                 {
                     Console.WriteLine("Already the slot is empty");
@@ -107,18 +108,12 @@ namespace ParkingManagementSystem
                     Console.WriteLine($"car with numberplate {car.NumberPlate} is leaving  location");
                 }
             }
-        }
-
-        public class Payment
-        {
-           
-            public double CalculateCharges()
+            public double CalculateCharges(Car car)
             {
-                double ParkingDuration = (DateTime.Now - Car.).TotalHours;
+                double ParkingDuration = (DateTime.Now - car.Parkingtime).TotalHours;
                 return ParkingDuration * 500;// assuming 500 rs per hour
             }
         }
-
 
         static void Main(string[] args)
         {
@@ -173,11 +168,41 @@ namespace ParkingManagementSystem
                     case 3:Console.WriteLine("Calculating the parking charges");
                         Console.WriteLine("Enter the numberPlate number whoes parking charges is to be calculated");
                         int numberPlate = int.Parse(Console.ReadLine());
-                        car Carfound =parkingLot.ParkingLots.Carfound;
-                        parkingLot.VacateSlot(car);
+                        Car cartoMakePayment = null;
+                        foreach (Car n in parkingLot.parkingLots)
+                        {
+                            if (n.NumberPlate == numberPlate)
+                            {
+                                cartoMakePayment= n;
+                                break;
+                            }
+                        }
+                        if (cartoMakePayment == null)
+                        {
+                            Console.WriteLine("There is no car present with the given Number Plate");
+                        }
+                        double cash = parkingLot.CalculateCharges(cartoMakePayment);
                         break;
 
-                    case 4:Console.WriteLine("unparking the car");
+                    case 4:
+                        Console.WriteLine("unparking the car");
+                        Console.WriteLine("Enter the numberPlate number of the car that is to be vacated");
+                        int num = int.Parse(Console.ReadLine());
+                        Car cartoVacate = null;
+                        foreach (Car n in parkingLot.parkingLots)
+                        {
+                            if(n.NumberPlate == num)
+                            {
+                                cartoVacate = n;
+                                break;
+                            }
+                        }
+                        if(cartoVacate == null)
+                        {
+                            Console.WriteLine("There is no car present with the given Number Plate");
+                        }
+                        parkingLot.VacateSlot(cartoVacate);
+
                         break;
 
                     case 5:
