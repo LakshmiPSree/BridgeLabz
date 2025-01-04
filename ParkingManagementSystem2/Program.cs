@@ -181,7 +181,11 @@ namespace ParkingManagementSystem
                         {
                             Console.WriteLine("There is no car present with the given Number Plate");
                         }
-                        double cash = parkingLot.CalculateCharges(cartoMakePayment);
+                        else
+                        {
+                            double cash = parkingLot.CalculateCharges(cartoMakePayment);
+                            Console.WriteLine($"Parking charges is : Rs:{cash:F2} ");
+                        }
                         break;
 
                     case 4:
