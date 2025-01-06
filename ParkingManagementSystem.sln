@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleLinkedList", "SingleL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{8B69E1FA-A316-46B5-A204-7DA64A90BFBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cONTACKbOOK", "cONTACKbOOK\cONTACKbOOK.csproj", "{D276B449-B17C-4F3E-95A6-D64A575B0742}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8B69E1FA-A316-46B5-A204-7DA64A90BFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B69E1FA-A316-46B5-A204-7DA64A90BFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B69E1FA-A316-46B5-A204-7DA64A90BFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
