@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cONTACKbOOK", "cONTACKbOOK\cONTACKbOOK.csproj", "{D276B449-B17C-4F3E-95A6-D64A575B0742}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "ExceptionHandling\ExceptionHandling.csproj", "{7B398682-F2E0-4CCA-B57D-CD3A2F56C5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaAndLinq", "LambdaAndLinq\LambdaAndLinq.csproj", "{06E0B103-A293-4A4F-A29F-2EF408D213DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D276B449-B17C-4F3E-95A6-D64A575B0742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B398682-F2E0-4CCA-B57D-CD3A2F56C5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B398682-F2E0-4CCA-B57D-CD3A2F56C5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B398682-F2E0-4CCA-B57D-CD3A2F56C5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B398682-F2E0-4CCA-B57D-CD3A2F56C5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E0B103-A293-4A4F-A29F-2EF408D213DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E0B103-A293-4A4F-A29F-2EF408D213DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E0B103-A293-4A4F-A29F-2EF408D213DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E0B103-A293-4A4F-A29F-2EF408D213DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
