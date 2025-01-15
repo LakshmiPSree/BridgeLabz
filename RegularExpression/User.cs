@@ -29,6 +29,9 @@ namespace RegularExpression
         [RegularExpression(@"^(?:(?:02/(?:29/(?:\d{2}(?:0[48]|[2468][048]|[13579][26])|(?:[02468][048]|[13579][26])00))|02/(?:0[1-9]|1[0-9]|2[0-8])/\d{4})|(?:0[13-9]|1[0-2])/(?:0[1-9]|[12][0-9]|3[01])/\d{4}|(?:04|06|09|11)/(?:0[1-9]|[12][0-9]|30)/\d{4})$")]
         public string Date {  get; set; }
 
+        [RegularExpression(@"(?:\d{4}[\s-]?){3}\d{4}",ErrorMessage = "The number should be 16 digits long, grouped into four groups of four digits separated by spaces or dashes")]
+        public string CreditCardNumber {  get; set; }
+
         
     }
 }
