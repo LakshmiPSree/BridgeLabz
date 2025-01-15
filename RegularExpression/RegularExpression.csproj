@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83DA04FE-1ACA-4085-A787-832702E24FEE}</ProjectGuid>
+    <ProjectGuid>{A35390C2-01C5-43BF-A7FD-FEC02435DF7E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Problems</RootNamespace>
-    <AssemblyName>Problems</AssemblyName>
+    <RootNamespace>RegularExpression</RootNamespace>
+    <AssemblyName>RegularExpression</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />

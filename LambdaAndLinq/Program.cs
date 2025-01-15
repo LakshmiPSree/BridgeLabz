@@ -45,7 +45,7 @@ namespace LambdaAndLinq
                 new Employee{Id=11,Name="Kiran",Age=21,Department="Literature"}
             };
 
-            var result = list.Where(e => e.Age>30).OrderBy(o => o.Name);
+            var result = list.Where(e => e.Age>30).OrderBy(o => o.Name)  ;
             foreach (var e in result)
             {
                 Console.WriteLine($"Employee name is:{e.Name} and age is {e.Age}");

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.SqlServer.Server;
 
 namespace Problems
 {
@@ -10,54 +13,66 @@ namespace Problems
     {
         static void Main(string[] args)
         {
-            //"Write a C# program that takes a student's score as input and classifies it into grades (A, B, C, D, or F) based on the following criteria:
-
-            //A: 90 - 100
-            //B: 80 - 89
-            //C: 70 - 79
-            //D: 60 - 69
-            //F: 0 - 59"
-            Console.WriteLine("Enter the student score so that we can provide the grade for the marks");
-            int marks =int.Parse(Console.ReadLine());
-            if (marks <=100 && marks >= 90)
+            //"Create a User class with properties Username, Password, Email, and DateOfBirth. Use data annotations to ensure:
+            //            Username is required and has a maximum length of 20 characters.
+            //            Password is required and has a minimum length of 6 characters.
+            //            Email is required and follows a valid email format.
+            //            DateOfBirth is required and the user must be at least 18 years old."
+            User user = new User();
+            Console.WriteLine("Enter the UserName");
+            user.Name = Console.ReadLine();
+            Console.WriteLine("Enter the Email");
+            user.Email = Console.ReadLine();
+            Console.WriteLine("Enter the password");
+            user.Password = Console.ReadLine();
+            Console.WriteLine("Enter the Date of birth");
+            user.DateOfBirth = Console.ReadLine();
+            Console.WriteLine("Enter your age");
+            user.Age= Console.ReadLine();
+            var content = new ValidationContext(user);
+            var result = new List<ValidationResult>();
+            bool isvaild = Validator.TryValidateObject(user, content, result, true);
+            if (isvaild)
             {
-                Console.WriteLine("You grade is :A");
-            }else if (marks <= 89 && marks >= 80)
-            {
-                Console.WriteLine("You grade is :B");
-            } else if (marks <= 79 && marks >= 70)
-            {
-                Console.WriteLine("You grade is :C");
-            }else if (marks <= 69 && marks >= 60)
-            {
-                Console.WriteLine("You grade is :D");
+                Console.WriteLine("Everything is vaild");
             }
             else
             {
-                Console.WriteLine("You grade is :F");
+                Console.WriteLine("Validator error are:");
+                foreach (var err in result)
+                {
+                    Console.WriteLine(err.ErrorMessage);
+                }
             }
-            //Develop a C# program that converts temperatures between Fahrenheit and Celsius based on user input. Use conditional statements to determine the conversion formula based on the user's choice.
-            Console.WriteLine("Enter the temperature :");
-            float temp = float.Parse(Console.ReadLine());
-            Console.WriteLine("Temperature is entered in celsius or fahrenheit");
-            string degree = Console.ReadLine();
-            if(degree == "celsius")
+            //"
+            //            Create a Customer class with properties FirstName, LastName, PhoneNumber, and Email.Use data annotations to ensure:
+            //            FirstName and LastName are required and have a maximum length of 50 characters each.
+            //            PhoneNumber is required and follows a valid phone number format.
+            //            Email is required and follows a valid email format.
+            Customer customer = new Customer();
+            Console.WriteLine("Enter the FirstName");
+            customer.FirstName = Console.ReadLine();
+            Console.WriteLine("Enter the lastname");
+            customer.LastName= Console.ReadLine();
+            Console.WriteLine("Enter the PhoneNumber");
+            customer.PhoneNumber = Console.ReadLine();
+            Console.WriteLine("Enter the Email");
+            customer.Email = Console.ReadLine();
+            
+            var contentInCustomer = new ValidationContext(customer);
+            var resultInCustomer = new List<ValidationResult>();
+            bool isvaildInCustomer = Validator.TryValidateObject(customer,contentInCustomer,resultInCustomer,true);
+            if (isvaildInCustomer)
             {
-                float fahrenheit = 0;
-                fahrenheit=((temp *9)/5)+32;
-                Console.WriteLine($"The temperature in fahrenheit is:{fahrenheit}");
-            }else if(degree == "fahrenheit")
-            {   
-                float celsius = 0;
-                celsius = ((temp - 32) * 5) / 9;
-                Console.WriteLine($"The temperature in celsius is :{celsius}");
+                Console.WriteLine("Everything is vaild");
             }
             else
             {
-                Console.WriteLine($"Enter the valid temperature degree");
-            }
-            //Write a C# program that calculates the price of a movie ticket based on the age of the customer and the time of the movie.
-           
+                Console.WriteLine("Validator error are:");
+                foreach (var err in result)
+                {
+                    Console.WriteLine(err.ErrorMessage);
+                }
             }
         }
     }
