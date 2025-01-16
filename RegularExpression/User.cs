@@ -32,6 +32,5 @@ namespace RegularExpression
         [RegularExpression(@"(?:\d{4}[\s-]?){3}\d{4}",ErrorMessage = "The number should be 16 digits long, grouped into four groups of four digits separated by spaces or dashes")]
         public string CreditCardNumber {  get; set; }
 
-        
     }
 }
